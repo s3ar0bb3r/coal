@@ -21,7 +21,18 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('welcome_message');
 	}
-}
 
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */
+    public  function  test($var1, $var2) {
+        $this->load->view('welcome_message');
+
+    }
+
+    public function _remap($method, $params= array())
+    {
+        return call_user_func_array(array($this, $method), $params);
+    }
+
+    public function _output($output) {
+        echo "output";
+    }
+}

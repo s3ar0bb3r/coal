@@ -356,7 +356,7 @@ $config['rewrite_short_tags'] = FALSE;
 |
 */
 $config['proxy_ips'] = '';
-
+$config['encryption_key'] = 'GeL3ixARTFs3dRql3vFg3D1Yob1sKUfh';
 
 /* End of file config.php */
 /* Location: ./application/config/config.php */
