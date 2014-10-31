@@ -40,7 +40,7 @@
 |
 */
 
-$route['default_controller'] = "welcome";
+$route['default_controller'] = "Home";
 $route['scaffolding_trigger'] = "";
 
 
@@ -48,7 +48,7 @@ $route['scaffolding_trigger'] = "";
 $route['login'] = "admin/admin/login";
 $route['logout'] = "admin/admin/logout";
 $route['register'] = "admin/admin/register";
-$route['admin/dashboard'] = "admin/admin/index";
+$route['admin/dashboard'] = "admin/dashboard/index";
 // END AUTHENTICATION LIBRARY ROUTES
 
 /* End of file routes.php */

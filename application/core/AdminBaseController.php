@@ -12,8 +12,7 @@
 * Auth provides a powerful, lightweight and simple interface for user authentication .
 */
 
-class Application extends CI_Controller
-{
+class AdminBaseController extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
