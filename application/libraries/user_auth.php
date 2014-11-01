@@ -15,7 +15,7 @@
 
 ob_start();
 
-class AG_Auth
+class User_Auth
 {
 	var $CI; // The CI object
 	var $config; // The config items
@@ -40,9 +40,9 @@ class AG_Auth
 		$this->CI->load->library('session');
 		$this->CI->load->helper('email');
 
-		$this->CI->load->model('ag_auth_model');
+		$this->CI->load->model('user_auth_model');
 
-		$this->CI->lang->load('ag_auth', 'english');
+		$this->CI->lang->load('user_auth', 'english');
 		
 		if($this->logged_in() == FALSE)
 		{
@@ -139,7 +139,7 @@ class AG_Auth
 	*/
 	public function get_user($username, $field_type = 'username')
 	{
-		$user = $this->CI->ag_auth_model->login_check($username, $field_type);
+		$user = $this->CI->user_auth_model->login_check($username, $field_type);
 
 		return $user;
 	}
@@ -156,7 +156,7 @@ class AG_Auth
 	*/
 	public function register($username, $password, $email)
 	{
-		return $this->CI->ag_auth_model->register($username, $password, $email);
+		return $this->CI->user_auth_model->register($username, $password, $email);
 	}
 	
 	

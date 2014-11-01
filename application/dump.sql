@@ -27,3 +27,16 @@ CREATE TABLE `users` (
   `identifier` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+/* 01/11/2014 Sajid */
+
+CREATE TABLE `admins` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `group_id` int(11) NOT NULL DEFAULT '100',
+  `token` varchar(255) NOT NULL,
+  `identifier` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;

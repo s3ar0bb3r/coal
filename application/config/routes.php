@@ -45,11 +45,11 @@ $route['scaffolding_trigger'] = "";
 
 
 // BEGIN AUTHENTICATION LIBRARY ROUTES
-$route['login'] = "admin/admin/login";
-$route['logout'] = "admin/admin/logout";
-$route['register'] = "admin/admin/register";
+$route['admin/login'] = "admin/admin/login";
+$route['admin/logout'] = "admin/admin/logout";
 $route['admin/dashboard'] = "admin/dashboard/index";
-// END AUTHENTICATION LIBRARY ROUTES
 
-/* End of file routes.php */
-/* Location: ./system/application/config/routes.php */
+$route['login'] = "user/user/login";
+$route['logout'] = "user/user/logout";
+$route['register'] = "user/user/register";
+$route['user/dashboard'] = "user/dashboard/index";

@@ -1,32 +1,6 @@
 <?php
-/**
-* Authentication Library
-*
-* @package Authentication
-* @category Libraries
-* @author Adam Griffiths
-* @link http://adamgriffiths.co.uk
-* @version 1.0.6
-* @copyright Adam Griffiths 2009
-*
-* Auth provides a powerful, lightweight and simple interface for user authentication 
-*/
 
-
-/**
-* The array which holds your user groups and their ID.
-* If you have a database table for groups, these ID's must be the same as in the database.
-*/
-$config['auth_groups'] = array(
-							'admin' => '1',
-							'editor' => '2',
-							'user' => '100'
-							);
-
-/**
-* The default URI string to redirect to after a successful login.
-*/
-$config['auth_login'] = 'admin/dashboard';
+$config['auth_login'] = 'user/dashboard';
 
 /**
 * The default URI string to redirect to after a successful logout.
@@ -52,15 +26,14 @@ $config['auth_remember'] = TRUE;
 * Remember to also update your routes file if you change the controller directory
 * MUST HAVE A TRAILING SLASH!
 */
-$config['auth_controllers_root'] = 'admin/';
+$config['auth_controllers_root'] = 'user/';
 $config['auth_models_root'] = '';
-$config['auth_views_root'] = 'admin/';
+$config['auth_views_root'] = 'user/';
  
 /**
 * Set the names for your user tables below (sans prefix, which will be automatically added)
 * ex.: your table is named `ci_users` with 'ci_' defined as your dbprefix in config/database.php, so set it to 'users' below
 */
-$config['auth_user_table'] = 'admins';
-$config['auth_group_table'] = 'groups';
+$config['auth_user_table'] = 'users';
 
 ?>
