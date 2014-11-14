@@ -105,7 +105,7 @@ class AG_Auth
 	*/
 	public function logged_in()
 	{
-		if($this->CI->session->userdata('logged_in') === TRUE)
+		if($this->CI->session->userdata('admin_logged_in') === TRUE)
 		{
 			return TRUE;
 		}
@@ -168,7 +168,7 @@ class AG_Auth
 	*/
 	public function login_user($user)
 	{
-		$user['logged_in'] = TRUE;
+		$user['admin_logged_in'] = TRUE;
 		
 		$this->CI->session->set_userdata($user);
 	}
@@ -195,7 +195,7 @@ class AG_Auth
 	*/
 	private  function _generate()
 	{
-		$username = $this->CI->session->userdata('username');
+		$username = $this->CI->session->userdata('adminname');
 	
 		// No love either way, generate a random string ourselves
 		$length = 20;
@@ -212,7 +212,7 @@ class AG_Auth
 
 		$this->CI->db->query("UPDATE `$this->user_table` SET `identifier` = '$identifier', `token` = '$token' WHERE `username` = '$username'");
 
-		setcookie("logged_in", $identifier, time()+3600, '/');
+		setcookie("admin_logged_in", $identifier, time()+3600, '/');
 	  
 	}
 	
@@ -235,7 +235,7 @@ class AG_Auth
 			$identifier = $result->username . $result->token;
 			$identifier = $this->_salt($identifier);
 			
-			if($identifier !== $_COOKIE['logged_in'])
+			if($identifier !== $_COOKIE['admin_logged_in'])
 			{
 				$this->CI->session->sess_destroy();
 				

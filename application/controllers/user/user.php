@@ -7,19 +7,16 @@ class User extends UserBaseController{
 
     public function index()
     {
-        if(logged_in())
-        {
+        if(logged_in()) {
             $this->user_auth->view('dashboard');
         }
-        else
-        {
+        else {
             $this->login();
         }
     }
 
 
-    public function register()
-    {
+    public function register() {
         $this->form_validation->set_rules('username', 'Username', 'required|min_length[6]|callback_field_exists');
         $this->form_validation->set_rules('password', 'Password', 'required|min_length[6]|matches[password_conf]');
         $this->form_validation->set_rules('password_conf', 'Password Confirmation', 'required|min_length[6]|matches[password]');
